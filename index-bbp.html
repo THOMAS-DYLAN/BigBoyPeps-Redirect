@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigBoyPeps — We've Moved</title>
+  <meta http-equiv="refresh" content="5;url=https://ctxlabz.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #006847;
+      --red:   #CE1126;
+      --white: #F8F6F1;
+      --dark:  #111111;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,104,71,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,104,71,.08) 1px, transparent 1px);
+      background-size: 48px 48px;
+      animation: gridDrift 20s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes gridDrift {
+      from { transform: translate(0,0); }
+      to   { transform: translate(48px, 48px); }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Top accent bar */
+    .accent-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--red), var(--green));
+      background-size: 200% 100%;
+      animation: barShift 3s linear infinite;
+    }
+    @keyframes barShift {
+      from { background-position: 0% 0; }
+      to   { background-position: 200% 0; }
+    }
+
+    .logo-mark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      letter-spacing: .06em;
+      line-height: 1;
+      color: var(--white);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp .6s ease forwards .1s;
+    }
+
+    .logo-mark span { color: var(--green); }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--red);
+      margin: 1.5rem auto;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .25s;
+    }
+
+    .headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      letter-spacing: .1em;
+      color: var(--white);
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .35s;
+    }
+
+    .sub {
+      margin-top: .75rem;
+      font-size: .95rem;
+      color: rgba(248,246,241,.5);
+      letter-spacing: .02em;
+      line-height: 1.6;
+      max-width: 360px;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .45s;
+    }
+
+    .new-url {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: .9rem 2.4rem;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: .12em;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background .2s, transform .2s;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .55s;
+    }
+    .new-url:hover { background: #00854f; transform: translateY(-2px); }
+
+    /* Countdown ring */
+    .countdown-wrap {
+      position: relative;
+      margin-top: 2.5rem;
+      width: 64px;
+      height: 64px;
+      opacity: 0;
+      animation: fadeUp .6s ease forwards .65s;
+    }
+    .countdown-svg {
+      transform: rotate(-90deg);
+      width: 64px; height: 64px;
+    }
+    .countdown-track {
+      fill: none;
+      stroke: rgba(255,255,255,.08);
+      stroke-width: 3;
+    }
+    .countdown-ring {
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 3;
+      stroke-dasharray: 163;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      animation: countdown 5s linear forwards .1s;
+    }
+    @keyframes countdown {
+      from { stroke-dashoffset: 0; }
+      to   { stroke-dashoffset: 163; }
+    }
+    .countdown-num {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      letter-spacing: .05em;
+    }
+
+    .footer-note {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: .75rem;
+      color: rgba(248,246,241,.25);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+
+  <div class="wrap">
+    <div class="logo-mark">Big<span>Boy</span>Peps</div>
+    <div class="divider"></div>
+    <div class="headline">We've Moved</div>
+    <p class="sub">Our store has a new home. You'll be redirected automatically in a few seconds.</p>
+    <a class="new-url" href="https://ctxlabz.com">Go to CTXLabz.com →</a>
+
+    <div class="countdown-wrap">
+      <svg class="countdown-svg" viewBox="0 0 56 56">
+        <circle class="countdown-track" cx="28" cy="28" r="26"/>
+        <circle class="countdown-ring"  cx="28" cy="28" r="26"/>
+      </svg>
+      <div class="countdown-num" id="num">5</div>
+    </div>
+  </div>
+
+  <div class="footer-note">BigBoyPeps · Research Peptides · For Research Purposes Only</div>
+
+  <script>
+    let t = 5;
+    const num = document.getElementById('num');
+    const iv = setInterval(() => {
+      t--;
+      num.textContent = t;
+      if (t <= 0) { clearInterval(iv); location.replace('https://ctxlabz.com'); }
+    }, 1000);
+  </script>
+</body>
+</html>
